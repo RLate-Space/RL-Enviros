@@ -1,6 +1,6 @@
-# PickHigh Environment
+# PickLow Environment
 
-PickHigh is a custom environment compatible with Gymnasium, designed to simulate a simple game where the player picks between two cards, and the goal is to pick the higher card. This environment can be used for reinforcement learning experiments.
+PickLow is a custom environment compatible with Gymnasium, designed to simulate a simple game where the player picks between two cards, aiming to select the lower card. This environment is useful for testing basic reinforcement learning algorithms.
 
 ## Environment Details
 
@@ -23,13 +23,15 @@ The action space is a discrete space of size 2. The agent can choose between two
 ### Rewards
 
 The reward structure is as follows:
-- `+1`: If the chosen card is higher than the other card.
+- `+1`: If the chosen card is lower than the other card.
 - `0`: If both cards have the same value.
-- `-1`: If the chosen card is lower than the other card.
+- `-1`: If the chosen card is higher than the other card.
 
 ### Episode Termination
 
-The episode in the `PickHigh` environment terminates under the following condition:
+### Episode Termination
+
+The episode in the `PickLow` environment terminates under the following condition:
 
 - **Different Cards Condition**: The episode will terminate if the card selected by the player is different from the dealer's card. This condition is checked after each action taken by the agent.
 
@@ -38,15 +40,14 @@ The episode in the `PickHigh` environment terminates under the following conditi
 
 This termination condition ensures that the agent's objective is to consistently select the lower card compared to the dealer's card. The reward and termination logic encourages the agent to learn the optimal strategy for selecting the lower card in each round.
 
-
 ### Example Episode
 
 Here's an example of a single episode:
 
 1. **Initial Observation**: `34` (left card: 3, right card: 4)
-2. **Action**: `1` (Pick the right card)
-3. **Reward**: `+1` (right card is higher)
-4. **Terminated**: `True` (player picked the higher card)
+2. **Action**: `0` (Pick the left card)
+3. **Reward**: `+1` (left card is lower)
+4. **Terminated**: `True` (player picked the lower card)
 
 ## Rendering
 
@@ -62,12 +63,18 @@ env.render()
 ## Metadata
 
 - **render_modes**: `["ansi"]`
-- **render_fps**: `4` (I don't really know what this means. Just picked a random number.)
+- **render_fps**: `4`
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request.
+Contributions are welcome! If you have an environment you'd like to add or an improvement to suggest, please open an issue or submit a pull request.
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
