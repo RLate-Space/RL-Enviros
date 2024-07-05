@@ -20,7 +20,7 @@ class Cannon(gym.Env):
         super().reset(seed=seed)
         self.shots = 10
         self._roll_distance()
-        return self.distance, {}
+        return self.distance, {"shots_left": self.shots}
 
     def _roll_distance(self):
         self.distance = self.np_random.random() * 90 + 10
@@ -39,9 +39,9 @@ class Cannon(gym.Env):
 
         obs = self.distance
         reward = 1 if hit else 0
-        return obs, reward, terminated, truncated, {}
+        return obs, reward, terminated, truncated, {"shots_left": self.shots}
 
-    def _calculate_projectile_distance(angle_degrees, speed=10):
+    def _calculate_projectile_distance(self, angle_degrees, speed=10):
         # Convert angle from degrees to radians
         angle_radians = math.radians(angle_degrees)
 
@@ -52,4 +52,3 @@ class Cannon(gym.Env):
         distance = (speed ** 2) * math.sin(2 * angle_radians) / g
 
         return distance
-

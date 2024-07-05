@@ -43,29 +43,19 @@ PickHigh is a simple game where the player picks between two cards, aiming to se
 Here is an example of how to use the `PickHigh` environment:
 
 ```python
-import gymnasium as gym
-from gymnasium_rlate import PickHigh
+import gymnasium_rlate as rlate
 
-# Create the environment
-env = PickHigh()
+# Create the Canon environment
+env = rlate.Cannon()
 
-# Reset the environment to get the initial observation
-observation, info = env.reset(seed=42)
+# Reset the environment
+obs, info = env.reset()
+print(obs)
 
-# Print the initial observation
-print(f"Initial observation: {observation}")
+# Make a step in the environment
+obs, reward, terminated, truncated, _ = env.step(23.5)
+print(obs, reward, terminated)
 
-# Take a random action
-action = env.action_space.sample()
-observation, reward, terminated, truncated, info = env.step(action)
-
-# Print the results of the action
-print(f"Action taken: {action}")
-print(f"New observation: {observation}")
-print(f"Reward: {reward}")
-print(f"Terminated: {terminated}")
-print(f"Truncated: {truncated}")
-print(f"Info: {info}")
 
 # Render the environment
 print(env.render())
