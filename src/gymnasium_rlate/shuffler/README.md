@@ -9,7 +9,7 @@ The `Shuffler` environment is a custom OpenAI Gymnasium environment where the ag
 To use the `Shuffler` environment, you need to have `gymnasium` and `numpy` installed. You can install these dependencies using pip:
 
 ```sh
-pip install gymnasium numpy
+pip install gymnasium_rlate numpy
 ```
 
 ### Environment Description

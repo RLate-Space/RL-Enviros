@@ -51,7 +51,7 @@ PickHigh is a simple game where the player picks between two cards, aiming to se
     - -1 if the chosen card is lower.
 - **Episode Termination**: The episode terminates when the player picks a card that is different from the dealer's card.
 
-[Detailed Documentation for PickHigh](src/gymnasium/pick_high/README.md)
+[Detailed Documentation for PickHigh](src/gymnasium_rlate/pick_high/README.md)
 
 ## Usage
 
