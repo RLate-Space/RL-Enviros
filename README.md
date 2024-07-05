@@ -22,21 +22,6 @@ You can install the `rl-enviros-rlate` package directly from PyPi:
 pip install rl-enviros-rlate
 ```
 
-### From Source
-
-To install the `rl-enviros-rlate` package from the source, follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/RLate-Space/RL-Enviros.git
-    cd RL-Enviros
-    ```
-
-2. Install the package using `pip`:
-    ```bash
-    pip install -e .
-    ```
-
 ## Environments
 
 ### PickHigh
