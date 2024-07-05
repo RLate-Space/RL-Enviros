@@ -1,6 +1,6 @@
 [project]
-name = "rl_enviros_rlate"
-version = "0.0.5"
+name = "rlate-env"
+version = "0.0.6"
 authors = [
     { name="RLate", email="hello@rlate.space" },
 ]
@@ -12,6 +12,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+# Dependencies
+dependencies = [
+    "gymnasium>=0.29.1",
+    "numpy>=1.26.4"
+]
+
 
 [project.urls]
 Homepage = "https://github.com/RLate-Space/RL-Enviros"
