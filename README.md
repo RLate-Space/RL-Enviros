@@ -16,10 +16,10 @@ RL Enviros is a collection of custom environments compatible with Gymnasium, des
 
 ### PyPi
 
-You can install the `rl-enviros-rlate` package directly from PyPi:
+You can install the `rlate-env` package directly from PyPi:
 
 ```bash
-pip install rl-enviros-rlate
+pip install rlate-env
 ```
 
 ## Environments
@@ -44,7 +44,7 @@ Here is an example of how to use the `PickHigh` environment:
 
 ```python
 import gymnasium as gym
-from gym_examples.envs.pick_high import PickHigh
+from gymnasium_rlate import PickHigh
 
 # Create the environment
 env = PickHigh()
