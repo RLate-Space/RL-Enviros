@@ -10,7 +10,7 @@ class Cannon(gym.Env):
         self.shots = 10
         self.distance = 0
         self.observation_space = spaces.Box(10, 100, (1, 1))
-        self.action_space = spaces.Box(1, 179)
+        self.action_space = spaces.Box(1, 89)
 
     def reset(
             self,
@@ -41,7 +41,7 @@ class Cannon(gym.Env):
         reward = 1 if hit else 0
         return obs, reward, terminated, truncated, {"shots_left": self.shots}
 
-    def _calculate_projectile_distance(self, angle_degrees, speed=10):
+    def _calculate_projectile_distance(self, angle_degrees, speed=32):
         # Convert angle from degrees to radians
         angle_radians = math.radians(angle_degrees)
 
