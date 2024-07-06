@@ -7,7 +7,7 @@ class PickHigh(gym.Env):
     metadata = {"render_modes": ["ansi"], "render_fps": 4}
 
     def __init__(self, render_mode=None):
-        self.observation_space = spaces.Box(0, 10, (2,), dtype=np.int8)
+        self.observation_space = spaces.Box(0, 9, (2,), dtype=np.int8)
         self.action_space = spaces.Discrete(2)
 
         assert render_mode is None or render_mode in self.metadata["render_modes"]
