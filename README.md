@@ -1,13 +1,15 @@
 # RL Enviros
 
-RL Enviros is a collection of custom environments compatible with Gymnasium, designed to simulate various games and scenarios for reinforcement learning experiments. This project aims to provide a variety of environments to help researchers and enthusiasts develop and test reinforcement learning algorithms.
+RL Enviros is a collection of custom environments compatible with Gymnasium, designed to simulate various games and
+scenarios for reinforcement learning experiments. This project aims to provide a variety of environments to help
+researchers and enthusiasts develop and test reinforcement learning algorithms.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Environments](#environments)
-  - [PickHigh](#pickhigh)
-  - [AnotherEnv](#anotherenv)
+    - [PickHigh](#pickhigh)
+    - [AnotherEnv](#anotherenv)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -15,8 +17,8 @@ RL Enviros is a collection of custom environments compatible with Gymnasium, des
 ## Installation
 
 ### PyPi
-
-You can install the `rlate-env` package directly from PyPi:
+- Published on [PyPi](https://pypi.org/project/rlate-env/)
+- You can install the `rlate-env` package directly from PyPi:
 
 ```bash
 pip install rlate-env
@@ -24,23 +26,27 @@ pip install rlate-env
 
 ## Environments
 
-### PickHigh
+**Shuffler**
+Arrange a shuffled list of numbers in ascending order by swapping with the number 5.
 
-PickHigh is a simple game where the player picks between two cards, aiming to select the higher card. This environment is useful for testing basic reinforcement learning algorithms.
+**PickHigh**
+Choose the higher-valued card from two randomly drawn cards.
 
-- **Observation Space**: Discrete space of size 100, representing two cards (e.g., 34 for left card 3 and right card 4).
-- **Action Space**: Discrete space of size 2. Action 0 selects the left card, and action 1 selects the right card.
-- **Reward**:
-    - +1 if the chosen card is higher.
-    - 0 if both cards are the same.
-    - -1 if the chosen card is lower.
-- **Episode Termination**: The episode terminates when the player picks a card that is different from the dealer's card.
+**PickLow**
+Choose the lower-valued card from two randomly drawn cards.
 
-[Detailed Documentation for PickHigh](src/gymnasium_rlate/pick_high/README.md)
+**Cannon**
+Hit a target at a random distance by adjusting the firing angle of a cannon.
+
+**Traffic Light**
+Decide to drive, slow down, or stop based on the current traffic light color.
+
+**K-Bandit**
+Find and exploit the arm with the highest expected reward in a multi-armed bandit setup.
 
 ## Usage
 
-Here is an example of how to use the `PickHigh` environment:
+Here is an example of how to use the `Cannon` environment:
 
 ```python
 import gymnasium_rlate as rlate
@@ -56,7 +62,6 @@ print(obs)
 obs, reward, terminated, truncated, _ = env.step(23.5)
 print(obs, reward, terminated)
 
-
 # Render the environment
 print(env.render())
 
@@ -66,7 +71,8 @@ env.close()
 
 ## Contributing
 
-Contributions are welcome! If you have an environment you'd like to add or an improvement to suggest, please open an issue or submit a pull request.
+Contributions are welcome! If you have an environment you'd like to add or an improvement to suggest, please open an
+issue or submit a pull request.
 
 1. Fork the repository.
 2. Create your feature branch (`git checkout -b feature/your-feature`).

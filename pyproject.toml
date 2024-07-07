@@ -1,6 +1,6 @@
 [project]
 name = "rlate-env"
-version = "0.0.15"
+version = "0.0.17"
 authors = [
     { name="RLate", email="hello@rlate.space" },
 ]

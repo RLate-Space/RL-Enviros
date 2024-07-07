@@ -1,4 +1,4 @@
-# TrafficLight Environment Documentation
+# TrafficLight Environment
 
 ## Overview
 
